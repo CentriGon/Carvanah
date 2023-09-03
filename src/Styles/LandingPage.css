@@ -1,0 +1,175 @@
+@import url('https://fonts.googleapis.com/css2?family=Kameron&family=Oswald&family=Play&family=Radley&display=swap');
+
+:root {
+    font-family: 'Kameron', serif;
+}
+
+body{
+    margin: 0px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    height: 300vh;
+    overflow-x: hidden;
+}
+
+.landing-page {
+    margin: 0px;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    overflow: hidden;
+}
+
+button {
+    padding: 10px;
+    font-size: 22px;
+    color: white;
+    background-color: red;
+    border-radius: 10px;
+    border: 0px solid black;
+    transition: all 0.2s linear;
+    box-shadow: 0px 2px 2px 1px rgba(0, 0, 0, 0.763);
+}
+
+button:hover {
+    transform: translateY(-5px);
+    
+}
+
+#root {
+    height: 100%;
+    width: 100%;
+}
+
+h1 {
+    color: rgb(255, 0, 0);
+}
+
+.landing-page {
+    height: 100%;
+    width: 100%;
+}
+
+.nav-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 80vw;
+    position: fixed;
+    align-self: center;
+}
+
+.nav-bar-button {
+    font-size: 18px;
+    background-color: rgba(255, 255, 255, 0);
+    border: 0px solid black;
+    transition: all 0.2s linear;
+    box-shadow: 0px 0px 0px 0px red;
+    font-weight: bold;
+}
+
+.nav-bar-button:hover {
+    transform: translateY(-5px)
+}
+
+.right-side-nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+}
+
+.triangle-right-side {
+    width: 700px;
+    height: 100vh;
+    position: absolute;
+    background-color: red;
+    z-index: -1;
+    clip-path: polygon(0% 0%, 100% 0%, 100% 100%);
+    justify-self:end;
+    right: 0;
+}
+
+.main-hero-section {
+    margin-top: 100px;
+}
+
+.hero-section-text {
+    font-size: 50px;
+    width: 50%;
+    color: black;
+}
+
+.main-hero-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+}
+
+.main-hero-section > img {
+    width: 800px;
+    margin: 0px -200px 0px -200px;
+    margin-left: -500px;
+}
+
+.info-icon {
+    height: 400px;
+    width: 250px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.info-icons {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+    margin-top: 100px;
+}
+
+p, h2 {
+    text-align: center;
+    margin: 0px;
+}
+
+h2 {
+    font-size: 30px;
+}
+
+p {
+    width: 200px;
+    font-size: 20px;
+}
+
+.img-container > img {
+    height: 120px;
+}
+
+.img-container {
+    background-color: rgba(255, 0, 0, 0.459);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 20px;
+    width: 150px;
+    height: 130px;
+}
+
+.red-banner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: red;
+    color: white;
+    padding-bottom: 20px;
+}
+
+.red-banner > button {
+    box-shadow: 0px 0px 0px 0px rgba(255, 255, 255, 0);
+}
