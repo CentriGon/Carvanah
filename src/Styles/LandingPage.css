@@ -2,6 +2,7 @@
 
 :root {
     font-family: 'Kameron', serif;
+    --green: #6CFE39;
 }
 
 body{
@@ -9,7 +10,6 @@ body{
     display: flex;
     align-items: center;
     flex-direction: column;
-    height: 300vh;
     overflow-x: hidden;
 }
 
@@ -172,4 +172,114 @@ p {
 
 .red-banner > button {
     box-shadow: 0px 0px 0px 0px rgba(255, 255, 255, 0);
+}
+
+.car-carousel {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 70px;
+    overflow: hidden;
+}
+
+.carousel-button {
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    box-shadow: 1px 0px 0px 0px black;
+}
+
+.arrow {
+    width: 35px;
+}
+
+.left-arrow {
+    transform: rotate(270deg)
+}
+
+.right-arrow {
+    transform: rotate(90deg)
+}
+
+.carousel-car {
+    width: 700px;
+}
+
+.car-container {
+    overflow: hidden;
+}
+
+.move-left {
+    animation: moveRight 10s linear infinite;
+}
+
+@keyframes moveRight {
+    10% {
+        transform: translateX(1000px);
+    }
+    20% {
+        transform: translateX(0px)
+    }
+    100% {
+        transform: translateX(1px);
+    }
+}
+
+.color-ball {
+    width: 150px;
+    height: 150px;
+    background-color: red;
+    position: absolute;
+    border-radius: 50%;
+    opacity: 0.2;
+}
+
+.start-section {
+    height: 500px;
+    display: flex;
+    justify-content: center;
+}
+
+.red-ball {
+    transform: translateY(50px);
+    left: 40%;
+}
+
+.red-to-green-ball {
+    left: 20%;
+    transform: translateY(200px) scale(1.3);
+    background: linear-gradient(to bottom, red, var(--green));
+}
+
+.green-ball {
+    left: 70%;
+    transform: translateY(350px);
+    background-color: var(--green);
+}
+
+.ready-prompt {
+    align-self: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.ready-prompt > h1 {
+    color: rgb(0, 0, 0);
+    font-size: 42px;
+}
+
+.ready-prompt > button {
+    background-color: var(--green);
+}
+
+
+.website-terms {
+    background-color: var(--green);
+    width: 100%;
+    height: 170px;
+    margin-top: 50px;
 }
