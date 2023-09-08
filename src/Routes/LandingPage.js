@@ -2,8 +2,11 @@ import "../Styles/LandingPage.css"
 import { InfoIcon } from "../Components/InfoIcon"
 import { useEffect, useState } from "react"
 import $ from 'jquery';
+import { useNavigate} from "react-router-dom"
 
 export const LandingPage = () => {
+
+    let navigate = useNavigate();
 
     const [carsList, setCarsList] = useState([
         require("../images/aventador-coupe.png"),
@@ -112,7 +115,7 @@ export const LandingPage = () => {
             <div className="green-ball color-ball"></div>
             <div className="ready-prompt">
                 <h1> Ready? </h1>
-                <button> Start Renting </button>
+                <button onClick={() => {navigate("/car-view")}}> Start Renting </button>
             </div>
         </div>
         <div className="website-terms">
