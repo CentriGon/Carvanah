@@ -57,7 +57,41 @@ export const CarView = () => {
                 <button className="carousel-button view-arrow" onClick={() => {changeCarousel(true)}}> <img className="arrow right-arrow" src={require("../images/white-arrow.png")}/></button>
             </div>
             <div className="info-box">
-
+                <table>
+                    <tr>
+                        <th className="table-right-border"> Property </th>
+                        <th> Value </th>
+                    </tr>
+                    <tr>
+                        <td className="table-right-border"> Transmission </td>
+                        <td> Really good </td>
+                    </tr>
+                    <tr>
+                        <td className="table-right-border"> Fuel Type </td>
+                        <td> Gas </td>
+                    </tr>
+                    <tr>
+                        <td className="table-right-border"> Highway MPG </td>
+                        <td> 26 </td>
+                    </tr>
+                    <tr>
+                        <td className="table-right-border"> Make </td>
+                        <td> Camry </td>
+                    </tr>
+                    <tr>
+                        <td className="table-right-border"> Model </td>
+                        <td> Toyota </td>
+                    </tr>
+                    <tr>
+                        <td className="table-right-border"> Year </td>
+                        <td> 1993 </td>
+                    </tr>
+                    <tr>
+                        <td className="table-right-border bottom-row"> Cylinders </td>
+                        <td className="bottom-row">  4 </td>
+                    </tr>
+                </table>
+                <button style={{backgroundColor: "var(--green)"}}> Rent {carsNames[carouselNum]}</button>
             </div>
         </di>
         <div className="triangle-left-side"></div>
