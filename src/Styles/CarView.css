@@ -68,16 +68,18 @@ body, #root {
 .car-info {
     display: flex;
     align-items: center;
-    justify-content: center;
     width: 100%;
     height: 100vh;
+    min-width: 800px;
+    z-index: 10;
 }
 
-.car-carousel,
-.info-box {
-    flex: 1;
-}
+
 
 .car-view-car {
     width: 400px;
+}
+
+.view-arrow {
+    background-color: var(--green);
 }

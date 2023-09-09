@@ -49,12 +49,12 @@ export const CarView = () => {
             </div>
         </div>  
         <di className="car-info">
-            <div className="car-carousel">
-                <button className="carousel-button" onClick={() => {changeCarousel(false)}}> <img className="arrow left-arrow" src={require("../images/white-arrow.png")}/></button>
+            <div className="car-carousel view-carousel">
+                <button className="carousel-button view-arrow" onClick={() => {changeCarousel(false)}}> <img className="arrow left-arrow" src={require("../images/white-arrow.png")}/></button>
                 <div className="car-container">
                     <img src={carsList[carouselNum]} alt="display car" className="carousel-car move-left car-view-car" />
                 </div>
-                <button className="carousel-button" onClick={() => {changeCarousel(true)}}> <img className="arrow right-arrow" src={require("../images/white-arrow.png")}/></button>
+                <button className="carousel-button view-arrow" onClick={() => {changeCarousel(true)}}> <img className="arrow right-arrow" src={require("../images/white-arrow.png")}/></button>
             </div>
             <div className="info-box">
 
