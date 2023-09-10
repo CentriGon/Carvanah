@@ -56,6 +56,15 @@ export const LandingPage = () => {
         }
     }
 
+    const manipulateMenu = (should) => {
+        if (!should) {
+            document.querySelector(".menu-popup").style.cssText = "width: 0%;";
+        }
+        else {
+            document.querySelector(".menu-popup").style.cssText = "width: 100%;";
+        }
+    }
+
     useEffect(() => {
         // let model = "camry"
         // $.ajax({
@@ -73,6 +82,12 @@ export const LandingPage = () => {
     }, [])
 
     return <div className="landing-page">
+        <div className="menu-popup">
+            <button className="menu-popup-button" onClick={() => {manipulateMenu(false)}}> Back </button>
+            <button className="menu-popup-button"> Inventory </button>
+            <button className="menu-popup-button"> Pricing </button>
+            <button className="menu-popup-button"> About us </button>
+        </div>
         <div className="nav-bar">
             <div className="left-side-nav">
                 <h1> Carvanah </h1>
@@ -81,6 +96,7 @@ export const LandingPage = () => {
                 <button className="nav-bar-button"> Inventory </button>
                 <button className="nav-bar-button"> Pricing </button>
                 <button className="nav-bar-button"> About us </button>
+                <img src={require("../images/threebars.png")} onClick={() => {manipulateMenu(true)}} className="three-bars-menu" alt="menu option"/>
             </div>
         </div>
         <div className="triangle-right-side"></div>
