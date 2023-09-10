@@ -97,7 +97,7 @@ export const CarView = () => {
                 <h1> Carvanah </h1>
             </div>
             <div className="right-side-nav">
-                <button className="nav-bar-button" onClick={() => {navigate("/")}}> Back </button>
+                <button className="nav-bar-button stay-here" onClick={() => {navigate("/")}}> Back </button>
             </div>
         </div>  
         <di className="car-info">
@@ -148,7 +148,7 @@ export const CarView = () => {
                         <td className="bottom-row"> {currentCarInfo[7]} </td>
                     </tr>
                 </table>
-                <button style={{backgroundColor: "var(--green)"}}> Rent {carsNames[carouselNum]}</button>
+                <button className="check-out-button" style={{backgroundColor: "var(--green)"}}> Rent {carsNames[carouselNum]}</button>
             </div>
         </di>
         <div className="triangle-left-side"></div>

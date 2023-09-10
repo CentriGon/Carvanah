@@ -78,6 +78,7 @@ body, #root {
 
 .car-view-car {
     width: 400px;
+    animation: none
 }
 
 .view-arrow {
@@ -114,3 +115,46 @@ td, th {
 .bottom-row {
     border-bottom: 0px solid black;
 }
+
+body {
+    overflow-x: hidden;
+}
+
+.car-info { 
+    overflow: hidden
+}
+@media (max-width: 900px) {
+    .car-info {
+        flex-direction: column;
+        margin-top: 20vh;;
+    }
+
+   .car-view-car {
+        width: 70vw;;
+    }
+
+    .car-view {
+        padding: 0px;
+    }
+
+    table {
+        font-size: 17px;
+    }
+
+    .check-out-button {
+        font-size: 20px;
+    }
+
+    .triangle-left-side {
+        display: none
+    }
+
+    .green-ball-view {
+        transform: translateX(-60%)
+    }
+
+    .stay-here {
+        display: block;
+    }
+}
+
