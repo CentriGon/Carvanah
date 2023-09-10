@@ -84,7 +84,7 @@ h1 {
 }
 
 .triangle-right-side {
-    width: 700px;
+    width: clamp(150px, 50%, 700px);
     height: 100vh;
     position: absolute;
     background-color: red;
@@ -268,6 +268,7 @@ p {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    z-index: 5;
 }
 
 .ready-prompt > h1 {
@@ -285,4 +286,41 @@ p {
     width: 100%;
     height: 170px;
     margin-top: 50px;
+}
+
+
+
+@media (max-width: 900px) {
+    .main-hero-section > img {
+        display: none;
+    }
+
+    .hero-left {
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .hero-left > h1,
+    .red-banner > h1 {
+        text-align: center;
+    }
+
+    .carousel-car {
+        width: 100%
+    }
+
+    .car-carousel {
+        gap: 10px;
+    }
+
+    .carousel-button {
+        width: 10vw;
+        height: 10vw;
+    }
+
+    .carousel-button > img {
+        width: 6vw;
+    }
 }

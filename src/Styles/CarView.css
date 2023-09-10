@@ -73,6 +73,7 @@ body, #root {
     min-width: 800px;
     z-index: 10;
     justify-content: center;
+    gap: 50px;
 }
 
 .car-view-car {

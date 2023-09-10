@@ -108,7 +108,7 @@ export const LandingPage = () => {
             </div>
             <button className="carousel-button" onClick={() => {changeCarousel(true)}}> <img className="arrow right-arrow" src={require("../images/white-arrow.png")}/></button>
         </div>
-        <h1 style={{alignSelf: "center", color: "black", marginTop: 20 + "px"}}> {carsNames[carouselNum]} </h1>
+        <h1 style={{alignSelf: "center", color: "black", marginTop: 20 + "px", textAlign: "center"}}> {carsNames[carouselNum]} </h1>
         <div className="start-section">
             <div className="red-ball color-ball"></div>
             <div className="red-to-green-ball color-ball"></div>

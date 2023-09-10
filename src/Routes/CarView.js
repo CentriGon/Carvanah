@@ -16,7 +16,7 @@ export const CarView = () => {
         "Bugatti Veyron"
     ])
     const [carouselNum, setCarouselNum] = useState(0);
-    const [currentCarInfo, setCurrentCarInfo] = useState(["a", "gas", "17", "lamborghini", "aventador coupe", "2012", "12"]);
+    const [currentCarInfo, setCurrentCarInfo] = useState(["A", "Gas", "17", "Lamborghini", "Aventador Coupe", "2012", "Two Seater","12"]);
 
 
 
@@ -54,6 +54,7 @@ export const CarView = () => {
                     capitalizeFirstLetter(result[0].make),
                     capitalizeFirstLetter(result[0].model),
                     capitalizeFirstLetter(result[0].year),
+                    capitalizeFirstLetter(result[0].class),
                     capitalizeFirstLetter(result[0].cylinders)
                 ])
             },
@@ -133,13 +134,18 @@ export const CarView = () => {
                         <td className="table-right-border"> Model </td>
                         <td> {currentCarInfo[4]} </td>
                     </tr>
+                    
                     <tr>
                         <td className="table-right-border"> Year </td>
                         <td> {currentCarInfo[5]} </td>
                     </tr>
                     <tr>
+                        <td className="table-right-border"> Class </td>
+                        <td> {currentCarInfo[6]} </td>
+                    </tr>
+                    <tr>
                         <td className="table-right-border bottom-row"> Cylinders </td>
-                        <td className="bottom-row"> {currentCarInfo[6]} </td>
+                        <td className="bottom-row"> {currentCarInfo[7]} </td>
                     </tr>
                 </table>
                 <button style={{backgroundColor: "var(--green)"}}> Rent {carsNames[carouselNum]}</button>
