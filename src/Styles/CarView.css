@@ -134,6 +134,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+    display: none;
 }
 
 .check-out-box {
@@ -144,6 +145,7 @@ body {
     flex-direction: column;
     align-items: center;
     border-radius: 30px;
+    display: none;
 }
 
 .check-out-info {
@@ -229,5 +231,39 @@ h3 {
     .stay-here {
         display: block;
     }
+
+    .check-out-info {
+        flex-direction: column;
+        align-items: center;
+        padding-bottom: 30px;
+    }
+
+    
+
+    .check-out-right, 
+    .check-out-left {
+        align-items: center;
+        justify-content: center;
+        width: 90%
+    }
+
+    .check-out-left > img {
+        border-top: 0px solid black;
+    }
+     
+
+    .check-out-right > h3, 
+    .check-out-left > h3 {
+        text-align: center
+    }
 }
 
+@media (max-width: 400px) {
+    .check-out-box > h1 {
+        font-size: 8vw;
+    }
+
+    .x-out {
+        margin-bottom: -6vh;
+    }
+}

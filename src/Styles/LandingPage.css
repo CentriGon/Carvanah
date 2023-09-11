@@ -214,22 +214,6 @@ p {
     overflow: hidden;
 }
 
-.move-left {
-    animation: moveRight 10s linear infinite;
-}
-
-@keyframes moveRight {
-    10% {
-        transform: translateX(1000px);
-    }
-    20% {
-        transform: translateX(0px)
-    }
-    100% {
-        transform: translateX(1px);
-    }
-}
-
 .color-ball {
     width: 150px;
     height: 150px;
