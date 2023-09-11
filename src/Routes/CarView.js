@@ -17,7 +17,7 @@ export const CarView = () => {
     ])
     const [carouselNum, setCarouselNum] = useState(0);
     const [currentCarInfo, setCurrentCarInfo] = useState(["A", "Gas", "17", "Lamborghini", "Aventador Coupe", "2012", "Two Seater","12"]);
-
+    const [carPrice, setCarPrice] = useState([5000, 4500])
 
 
 
@@ -68,30 +68,63 @@ export const CarView = () => {
     function capitalizeFirstLetter(input) {
         // Check if the input is a string
         if (typeof input === 'string' && input.length > 0) {
-          // Split the input into words using whitespace as the delimiter
-          const words = input.split(/\s+/);
-      
-          // Capitalize each word that starts with a letter
-          const capitalizedWords = words.map((word) => {
+            // Split the input into words using whitespace as the delimiter
+            const words = input.split(/\s+/);
+        
+            // Capitalize each word that starts with a letter
+            const capitalizedWords = words.map((word) => {
             // Check if the first character is a letter
             if (/^[a-zA-Z]/.test(word)) {
-              // Capitalize the first letter and concatenate the rest of the string
-              return word.charAt(0).toUpperCase() + word.slice(1);
+                // Capitalize the first letter and concatenate the rest of the string
+                return word.charAt(0).toUpperCase() + word.slice(1);
             }
             // If the word doesn't start with a letter, return it as is
             return word;
-          });
-      
-          // Join the capitalized words back into a single string
-          return capitalizedWords.join(' ');
+            });
+        
+            // Join the capitalized words back into a single string
+            return capitalizedWords.join(' ');
         }
-      
+        
         // If the input is not a string or is empty, return it as is
         return input;
-      }
+        }
+
+    const closeCheckOut = () => {
+        document.querySelector(".check-out-box").style.cssText = "display: none";
+        document.querySelector(".screen-cover").style.cssText = "display: none";
+    }
+
+    const openCheckOut = () => {
+        document.querySelector(".check-out-box").style.cssText = "display: flex";
+        document.querySelector(".screen-cover").style.cssText = "display: flex";
+    }
 
 
     return <div className="car-view">
+        <div className="screen-cover">
+            <div className="check-out-box">
+                <h1 className="x-out" onClick={() => {closeCheckOut()}}> X </h1>
+                <h1 style={{color: "black"}}> Check Out </h1>
+                <div className="check-out-info">
+                    <div className="check-out-left">
+                        <h3> Vehicle Name: {carsNames[carouselNum]}</h3>
+                        <h3> Year: {currentCarInfo[5]}</h3>
+                        <h3> Make: {currentCarInfo[3]}</h3>
+                        <h3> Image: </h3>
+                        <img src={carsList[carouselNum]} alt="Photo of vehicle"/>
+                    </div>
+                    <div className="check-out-right">
+                        <h3> {`Car Price:  $${carPrice[carouselNum]}`}</h3>
+                        <h3> {`Tax: $${carPrice[carouselNum] * 0.05}`}</h3>
+                        <div className="line"></div>
+                        <h3> {`Total: $${carPrice[carouselNum] + carPrice[carouselNum] * 0.05}`}</h3>
+                        <button className="green" style={{fontSize: 15 + "px"}}> Proceed to Payment</button>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
         <div className="nav-bar view-nav">
             <div className="left-side-nav">
                 <h1> Carvanah </h1>
@@ -100,7 +133,7 @@ export const CarView = () => {
                 <button className="nav-bar-button stay-here" onClick={() => {navigate("/")}}> Back </button>
             </div>
         </div>  
-        <di className="car-info">
+        <div className="car-info">
             <div className="car-carousel view-carousel">
                 <button className="carousel-button view-arrow" onClick={() => {changeCarousel(false)}}> <img className="arrow left-arrow" src={require("../images/white-arrow.png")}/></button>
                 <div className="car-container">
@@ -148,9 +181,9 @@ export const CarView = () => {
                         <td className="bottom-row"> {currentCarInfo[7]} </td>
                     </tr>
                 </table>
-                <button className="check-out-button" style={{backgroundColor: "var(--green)"}}> Rent {carsNames[carouselNum]}</button>
+                <button className="check-out-button" style={{backgroundColor: "var(--green)"}} onClick={() => {openCheckOut()}}> Rent {carsNames[carouselNum]}</button>
             </div>
-        </di>
+        </div>
         <div className="triangle-left-side"></div>
         <div className="green-ball-view ball1"></div>
         <div className="green-ball-view ball2"></div>
