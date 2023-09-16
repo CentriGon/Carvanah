@@ -84,7 +84,7 @@ export const LandingPage = () => {
     return <div className="landing-page">
         <div className="menu-popup">
             <button className="menu-popup-button" onClick={() => {manipulateMenu(false)}}> Back </button>
-            <button className="menu-popup-button"> Inventory </button>
+            <button className="menu-popup-button" onClick={() => {navigate("/car-view")}}> Inventory </button>
             <button className="menu-popup-button"> Pricing </button>
             <button className="menu-popup-button"> About us </button>
         </div>
@@ -93,7 +93,7 @@ export const LandingPage = () => {
                 <h1> Carvanah </h1>
             </div>
             <div className="right-side-nav">
-                <button className="nav-bar-button"> Inventory </button>
+                <button className="nav-bar-button" onClick={() => {navigate("/car-view")}}> Inventory </button>
                 <button className="nav-bar-button"> Pricing </button>
                 <button className="nav-bar-button"> About us </button>
                 <img src={require("../images/threebars.png")} onClick={() => {manipulateMenu(true)}} className="three-bars-menu" alt="menu option"/>
@@ -103,7 +103,7 @@ export const LandingPage = () => {
         <div className="main-hero-section">
             <div className="hero-left">
                 <h1 className="hero-section-text">Premium Car Rentals on Demand</h1>
-                <button> Start Renting</button>
+                <button onClick={() => {navigate("/car-view")}}> Start Renting</button>
             </div>
             <img src={require("../images/580b585b2edbce24c47b2c83.png")} alt="red lamborghini aventador"/>
         </div>
