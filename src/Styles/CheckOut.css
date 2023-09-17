@@ -1,0 +1,71 @@
+.top-nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+.progres-line {
+    height: 3px;
+    width: clamp(70px, 10vw, 150px);
+    background-color: black;
+}
+
+.progress-div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.check-out-progress {
+    border: 3px solid black;
+    border-radius: 50%;
+    width: 35px;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s linear;
+    user-select: none;
+}
+
+.check-out-progress:hover {
+    transform: scale(1.2);
+}
+
+.filled-out {
+    background-color: black;
+    color: white;
+}
+
+.progress-info {
+    position: absolute;
+    width: 120px;
+    text-align: center;
+    margin-top: 90px;
+}
+
+.check-out-page {
+    display: flex;
+    min-height: 100vh;
+    background-color: #D9D9D9;
+}
+
+.left-side-checkout {
+    flex: 2;
+    background-color: white;
+}
+
+.right-side-checkout {
+    flex: 1;
+    display: flex;
+   justify-content: center;
+}
+
+
+.info-box-checkout {
+    width: 80%;
+    height: 40%;
+    background-color: white;
+    margin-top: 70px;
+}

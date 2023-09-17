@@ -4,22 +4,26 @@ import { useState } from "react";
 import $ from 'jquery';
 
 
-export const CarView = () => {
+export const CarView = (props) => {
 
     const navigate = useNavigate();
     const [carsList, setCarsList] = useState([
         require("../images/aventador-coupe.png"),
-        require("../images/bugatti-veyron.png")
+        require("../images/bugatti-veyron.png"),
+        require("../images/mcLarenPng.png"),
+        require("../images/AstonMartinVantage.png"),
+        require("../images/Ferrari488.png")
     ])
     const [carsNames, setCarsNames] = useState([
         "Lamborghini Aventador",
-        "Bugatti Veyron"
+        "Bugatti Veyron",
+        "McLaren P1",
+        "Aston Martin Vantage",
+        "Ferrari 488"
     ])
     const [carouselNum, setCarouselNum] = useState(0);
     const [currentCarInfo, setCurrentCarInfo] = useState(["A", "Gas", "17", "Lamborghini", "Aventador Coupe", "2012", "Two Seater","12"]);
-    const [carPrice, setCarPrice] = useState([5000, 4500])
-
-
+    const [carPrice, setCarPrice] = useState([5000, 4500, 7000, 3500, 4000])
 
     const changeCarousel = (shouldForward) => {
         let newNum = -999;
@@ -40,7 +44,8 @@ export const CarView = () => {
             }
         }
 
-        const carModel = (carsNames[newNum].split(" "))[1]
+        let carModel = (carsNames[newNum].split(" "))
+        carModel = carModel[carModel.length - 1];
         $.ajax({
             method: 'GET',
             url: 'https://api.api-ninjas.com/v1/cars?model=' + carModel,
@@ -63,6 +68,7 @@ export const CarView = () => {
             }
         });
         setCarouselNum(newNum)
+        props.changeSelectedCar(newNum);
     }
 
     function capitalizeFirstLetter(input) {
@@ -119,7 +125,7 @@ export const CarView = () => {
                         <h3> {`Tax: $${carPrice[carouselNum] * 0.05}`}</h3>
                         <div className="line"></div>
                         <h3> {`Total: $${carPrice[carouselNum] + carPrice[carouselNum] * 0.05}`}</h3>
-                        <button className="green" style={{fontSize: 15 + "px"}}> Proceed to Payment</button>
+                        <button className="green" style={{fontSize: 15 + "px"}} onClick={() => {navigate("/check-out")}}> Proceed to Payment</button>
                     </div>
                     
                 </div>

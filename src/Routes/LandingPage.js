@@ -10,11 +10,13 @@ export const LandingPage = () => {
 
     const [carsList, setCarsList] = useState([
         require("../images/aventador-coupe.png"),
-        require("../images/bugatti-veyron.png")
+        require("../images/bugatti-veyron.png"),
+        require("../images/teslaModelY.png")
     ])
     const [carsNames, setCarsNames] = useState([
         "Lamborghini Aventador",
-        "Bugatti Veyron"
+        "Bugatti Veyron",
+        "Tesla Model Y"
     ])
     const [carouselNum, setCarouselNum] = useState(0);
 
