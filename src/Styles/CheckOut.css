@@ -33,7 +33,7 @@
     transform: scale(1.2);
 }
 
-.filled-out {
+#filled-out {
     background-color: black;
     color: white;
 }
@@ -94,6 +94,34 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    width: 100%;
+}
+
+.confirm-info {
+    align-items: flex-start;
+    gap: 10px;
+    width: 500px
+}
+
+.confirm-info > h2 {
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px
+}
+
+.edit-info {
+    font-size: 22px;
+    border: 2px solid black;
+    width: 25px;
+    height: 25px;
+    user-select: none;
+    transition: all 0.2s linear;
+}
+
+.edit-info:hover {
+    color: white;
+    background-color: black;
 }
 
 .current-info {

@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "../Styles/CheckOut.css"
 
 
@@ -33,12 +33,27 @@ export const Checkout = (props) => {
     const [country, setCountry] = useState()
     
 
+    useEffect(() => {
+        console.log("chnaged")
+        if (currentInfo >= 1) {
+            document.querySelector(".progress-2").setAttribute("id", "filled-out")
+        }
+        else {
+            document.querySelector(".progress-2").removeAttribute("id")
+        }
+        if (currentInfo >= 2) {
+            document.querySelector(".progress-3").setAttribute("id", "filled-out")
+        }
+        else {
+            document.querySelector(".progress-3").removeAttribute("id")
+        }
+    }, [currentInfo])
 
     return <div className="check-out-page">
         <div className="left-side-checkout">
             <div className="top-nav">
                 <div className="progress-div">
-                    <h2 className="check-out-progress progress-1 filled-out"> 1 </h2>
+                    <h2 className="check-out-progress progress-1" id="filled-out"> 1 </h2>
                     <p className="progress-info"> Payment Information</p>
                 </div>
                 <div className="progres-line"></div>
@@ -56,16 +71,16 @@ export const Checkout = (props) => {
                 { currentInfo == 0 ? <div className="payment-information">
                     <div className="payment-info-label">
                         <label for="credit-card-number"> Credit Card Number </label>
-                        <input type="number" id="credit-card-number" onChange={(e) => {setCreditCardNum(e.target.value)}}/>
+                        <input type="number" required id="credit-card-number" defaultValue={creditCardNum} onChange={(e) => {setCreditCardNum(e.target.value)}}/>
                     </div>
                     <div className="extra-info-card">
                         <div className="payment-info-label">
                             <label for="exp-date"> Expiration Date </label>
-                            <input type="number" id="exp-date" onChange={(e) => {setCreditCardExp(e.target.value)}}/>
+                            <input type="number"requiredid="exp-date" defaultValue={creditCardExp} onChange={(e) => {setCreditCardExp(e.target.value)}}/>
                         </div>
                         <div className="payment-info-label">
                             <label for="sec-code"> Security Code </label>
-                            <input type="number" id="sec-code" onChange={(e) => {setCreditCardSec(e.target.value)}}/>
+                            <input type="number" required id="sec-code" defaultValue={creditCardSec} onChange={(e) => {setCreditCardSec(e.target.value)}}/>
                         </div>
                     </div>
                     <button onClick={() => {setCurrentInfo(prevNum => prevNum+1)}} className="next-info"> Next </button>
@@ -74,25 +89,25 @@ export const Checkout = (props) => {
                         <div className="address-lines">
                             <div className="address-info-label">
                                 <label for="address-line-1"> Address Line 1 </label>
-                                <input type="text" id="address-line-1" onChange={(e) => {setAddressLineOne(e.target.value)}}/>
+                                <input type="text" required id="address-line-1" defaultValue={addressLineOne} onChange={(e) => {setAddressLineOne(e.target.value)}}/>
                             </div>
                             <div className="address-info-label">
                                 <label for="address-line-2"> Address Line 2 </label>
-                                <input type="text" id="address-line-2" onChange={(e) => {setAddressLineTwo(e.target.value)}}/>
+                                <input type="text" id="address-line-2" defaultValue={addressLineTwo} onChange={(e) => {setAddressLineTwo(e.target.value)}}/>
                             </div>
                         </div>
                         <div className="address-info-label">
                                 <label for="country"> Country </label>
-                                <input type="text" id="country" onChange={(e) => {setCountry(e.target.value)}}/>
+                                <input type="text" required id="country" defaultValue={country} onChange={(e) => {setCountry(e.target.value)}}/>
                         </div>
                         <div className="city-state">
                             <div className="address-info-label">
                                 <label for="city"> City </label>
-                                <input type="text" id="city" onChange={(e) => {setCity(e.target.value)}}/>
+                                <input type="text" required id="city" defaultValue={city} onChange={(e) => {setCity(e.target.value)}}/>
                             </div>
                             <div className="address-info-label">
                                 <label for="state"> State </label>
-                                <input type="text" id="state" onChange={(e) => {setState(e.target.value)}}/>
+                                <input type="text" required id="state" defaultValue={state} onChange={(e) => {setState(e.target.value)}}/>
                             </div>
                         </div>
                         <div className="buttons">
@@ -100,10 +115,17 @@ export const Checkout = (props) => {
                             <button onClick={() => {setCurrentInfo(prevNum => prevNum+1)}} className="next-info"> Next </button>
                         </div>
                     </div> : <div className="confirm-info">
-                        <h2> {creditCardNum}</h2>
+                        <h2> <h2 className="edit-info" onClick={() => {setCurrentInfo(0)}}> + </h2>Credit Card Number: {creditCardNum}</h2>
+                        <h2> <h2 className="edit-info" onClick={() => {setCurrentInfo(0)}}> + </h2>Credit Card Expiration Date: {creditCardExp}</h2>
+                        <h2> <h2 className="edit-info" onClick={() => {setCurrentInfo(0)}}> + </h2>Credit Card Security Code: {creditCardSec}</h2>
+                        <h2> <h2 className="edit-info" onClick={() => {setCurrentInfo(1)}}> + </h2>Address Line 1: {addressLineOne}</h2>
+                        <h2> <h2 className="edit-info" onClick={() => {setCurrentInfo(1)}}> + </h2>Address Line 2: {addressLineOne}</h2>
+                        <h2> <h2 className="edit-info" onClick={() => {setCurrentInfo(1)}}> + </h2>Country: {country}</h2>
+                        <h2> <h2 className="edit-info" onClick={() => {setCurrentInfo(1)}}> + </h2>City: {city}</h2>
+                        <h2> <h2 className="edit-info" onClick={() => {setCurrentInfo(1)}}> + </h2>State: {state}</h2>
                         <div className="buttons">
                             <button onClick={() => {setCurrentInfo(prevNum => prevNum-1)}} className="next-info"> Back </button>
-                            <button onClick={() => {setCurrentInfo(prevNum => prevNum+1)}} className="next-info"> Next </button>
+                            <button className="next-info" style={{width: 180 + "px"}}> Purchase Item </button>
                         </div>
                         </div>}
                 </div>}

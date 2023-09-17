@@ -7,7 +7,7 @@ import { useState } from "react";
 
 export  const BrowserRouters = () => {
 
-    const [selectedCar, setSelectedCar] = useState(-1);
+    const [selectedCar, setSelectedCar] = useState(0);
 
     return <BrowserRouter>
         <Routes>
